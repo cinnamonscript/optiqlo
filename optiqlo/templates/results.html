@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+<!-- Products -->
+<section class="section-products">
+  <div class="container">
+    <h1 class="hero-content">Check out all of our {{title}}</h1>
+    {% for i in range(count)%}
+
+{{result[i]}}
+
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

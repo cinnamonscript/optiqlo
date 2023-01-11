@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="alert alert-primary" role="alert">
+  {% for message in messages %}
+  {{ message }}
+  {% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+
+{% endblock %}
+
+{% block main %}
+
+<!-- Products -->
+<section class="section-products">
+  <div class="container">
+    <h1 class="hero-content">Check out all of our {{title}}</h1>
+    {% for glasses in glasses%}
+
+    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+      <div id="{{glasses.id}}" class="product-content">
+        <div class="product-img">
+          <a href="{{ url_for('main.product', productname=glasses.name) }}">
+            <img src="{{url_for('static', filename='img/'+glasses.image)}}" alt="Card image">
+          </a>
+        </div>
+        <div class="product-btns">
+          <form action="{{ url_for('main.order') }}">
+            <input type="hidden" id="glasses_id" name="glasses_id" value="{{ glasses.id }}">
+            <input class="btn-cart" type="submit" value="Add to Cart">
+          </form>
+
+        </div>
+        <div id="{{glasses.id}}" class="product-info text-center">
+          <p class="product-title">{{glasses.name}}</p>
+          <p class="product-price">${{glasses.price}}</p>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<!-- display glasses for the specific shape -->
+<section>
+
+    <div class="text-dark text-center">
+        <div>
+            <p class="hero-content">Browse a MATERIAL</p>
+        </div>
+    </div>
+    <section class="section-products">
+        <div class="container">
+    {% for material in materials%} 
+    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+        <div id="{{material.id}}" class="product-content">
+          <div class="product-img">
+            <a href="{{ url_for('main.materialsglasses', materialid=material.id) }}">
+              <img src="{{url_for('static', filename='img/'+material.image)}}" alt="Card image">
+            </a>
+          </div>
+          <div id="{{material.id}}" class="product-info text-center">
+            <p class="product-title">{{material.name}}</p>
+            <p class="product-price">{{material.description}}</p>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    </section>
+
+</section>
+{% endblock %}

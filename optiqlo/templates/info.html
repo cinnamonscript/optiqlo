@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+<div class="alert alert-primary" role="alert">
+  {% for message in messages %}
+  {{ message }}
+  {% endfor %}
+</div>
+
+{% endif %}
+{% endwith %}
+
+{% endblock %}
+
+{% block main %}
+
+<!-- Info -->
+
+    <div class="container mt-5 mb-5">
+        <h1 class="hero-content">{{ info }}</h1>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="images p-2">
+                    <div class="text-center p-4"> <img id="{{ info }}" src="{{url_for('static', filename='img/pexels-shane-aldendorff-1054777.jpg')}}" width="250" /> </div>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="product p-4">
+                    <div class="d-flex justify-content-end align-items-center">
+                      <div class="d-flex align-items-center"> <a class="ml-1" href="{{url_for('main.index')}}">Back to Home</a> </div>
+                    </div>
+                    <div class="mt-4 mb-3"> 
+                    <p class="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Vestibulum nec malesuada ex. Suspendisse id tortor diam. Nullam congue arcu ut semper tincidunt. 
+                        Mauris pharetra orci a metus fringilla ultricies. Nunc vel turpis ac nisi lacinia posuere. 
+                        Donec vitae faucibus sapien, vitae euismod eros. Donec porta suscipit quam eu tristique. 
+                        Aliquam sodales sit amet felis nec sagittis. Praesent id dui sit amet lorem consectetur accumsan quis ut augue. 
+                        Sed in lobortis libero, eu scelerisque purus.</p>
+                    <p class="about">Morbi a finibus metus, a lacinia sem. Donec mauris nisl, scelerisque a blandit ac, finibus eu metus. 
+                        Praesent sit amet risus et arcu pharetra bibendum. Vivamus a arcu in turpis porta accumsan id eu purus. 
+                        Cras venenatis elit sit amet lacus tincidunt euismod. Proin egestas mi eros, nec tempus mauris pretium nec. 
+                        Nullam placerat consectetur eros ut faucibus.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock %}

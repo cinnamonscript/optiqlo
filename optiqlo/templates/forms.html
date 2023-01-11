@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="alert alert-primary" role="alert">
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %} 
+{% endblock %}
+
+{% block main %}
+
+<section>  
+    <div class="container">
+        <h1 class="hero-content">More Information</h1>
+        <div class="row">
+            <div class = "col-12">
+                <br>
+                <br>
+                <h4>
+                    <strong>Thanks for shopping with us. Please provide details to {{ title }}. </strong>
+                </h4>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class = "col-6">
+                {{wtf.quick_form(form)}}
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

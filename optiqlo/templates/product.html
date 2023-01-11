@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block main %}
+
+{% for glasses in glasses %}
+
+<!-- Product Detail -->
+<div class="container mt-5 mb-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="images p-2">
+              <div class="text-center p-4"> <img id="{{ glasses.id }}" src="{{url_for('static', filename='img/'+glasses.image)}}" width="250" /> </div>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="product p-4">
+              <div class="d-flex justify-content-end align-items-center">
+                <div class="d-flex align-items-center"> <a class="ml-1" href="{{url_for('main.index')}}">Back to Home</a> </div>
+              </div>
+              <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand">Optiqlo</span>
+                <h5 class="text-uppercase">{{ glasses.name }}</h5>
+                <div class="price d-flex flex-row align-items-center"> <span class="price">${{ glasses.price }}</span>
+                </div>
+              </div>
+              <p class="about">{{ glasses.description }}</p>
+              <div class="sizes mt-5">
+                <h6 class="text-uppercase">Size (eye size - bridge, mm) </h6> <label class="radio"> <input type="radio"
+                    name="size" checked> <span>{{ glasses.eyesize }}-{{ glasses.bridgesize }}</span> </label> 
+              </div>
+              <div class="cart mt-4 align-items-center"> 
+                <form action="{{ url_for('main.order') }}">
+                  <input type="hidden" id="glasses_id" name="glasses_id" value="{{ glasses.id }}">
+                  <input class="btn-cart" type="submit" value="Add to Cart">
+                </form>
+                 <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<!-- More Detail -->
+<div class="container">
+  <h3 class="display-5">More Details</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="col-md-6 col-lg-4 col-xl-4"></th>
+        <th class="about col-md-6 col-lg-8 col-xl-8">Specifications</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" class="about">Name</th>
+        <td class="about">{{ glasses.name }}</td>
+      </tr>
+      <tr>
+        <th scope="row mb=0" class="about">Material</th>
+        <td class="about">{{ glasses.material_id }} <p>(1 = Acetate; 2 = Metal; 3 = Titanium)</p></td>
+      </tr>
+      <tr>
+        <th scope="row pb=0" class="about">Shape </th>
+        <td class="about">{{ glasses.shape_id }} <p>(1 = Rectangular; 2 = Round; 3 = Cats Eye; 4 = Aviator)</p></td>
+      </tr>
+      <tr>
+        <th scope="row" class="about">Gender</th>
+        <td class="about">{{ glasses.gender }}</td>
+      </tr>
+      <tr>
+        <th scope="row" class="about">Size (eye size - bridge size)</th>
+        <td class="about">{{ glasses.eyesize }}-{{ glasses.bridgesize }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="about">This item was hand-made with care by our local technicians.</p>
+  <hr class="my-2">
+  <br>
+  <p class="about">Get another opinion, send it to a friend!</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-md" href="{{ url_for('main.friendsend', productname=glasses.name) }}" role="button">Send Now</a>
+  </p>
+</div>
+{% endfor %} 
+{% endblock %}

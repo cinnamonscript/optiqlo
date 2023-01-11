@@ -1,0 +1,479 @@
+body,
+html {
+  height: 100%;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 40%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter: brightness(100%);
+}
+
+.hero-content {
+  position: relative;
+  font-family: "Monserrat", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #0d4731;
+  text-align: center;
+  margin: 0.625rem;
+  z-index: 1000;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 0.9rem;
+  margin-bottom: 2rem;
+  color: #0d4731;
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  font-weight: 200;
+  margin-top: 1rem;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: rgb(156, 136, 70);
+  color: white;
+}
+
+/* Start Carousel */
+.carousel-one {
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-one::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/carousel1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.carousel-two {
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-two::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/carousel2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.carousel-three {
+  position: relative;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-three::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/carousel3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.carousel-content {
+  position: relative;
+  font-family: "" Monserrat"", sans-serif;
+  color: white;
+  text-align: center;
+  margin: 0.625rem;
+}
+
+.carousel-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.carousel-subtitle {
+  font-size: 2rem;
+  font-weight: 200;
+  margin-top: 1rem;
+}
+
+.carousel-text-button {
+  font-size: 2rem;
+  font-weight: 400;
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(18, 106, 60);
+  text-align: center;
+  cursor: pointer;
+}
+
+.carousel-text-button:hover {
+  background-color: rgb(156, 136, 70);
+  color: white;
+}
+
+/* End Carousel */
+
+/* Start Top Nav */
+.topnav {
+  background-color: rgb(71, 122, 103);
+  overflow: hidden;
+}
+
+.topnav .topnav-right .form-inline {
+  float: left;
+  color: #ffffff;
+  text-align: center;
+  padding: 0px 12px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav .topnav-right .btn {
+  float: left;
+  color: #ffffff;
+  text-align: center;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav .topnav-right .btn a:hover {
+  text-decoration: none;
+}
+
+.topnav .topnav-right .btn .text {
+  float: right;
+  font-family: "Monserrat", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  padding-left: 0.8em;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Left-aligned section inside the top navigation */
+.topnav-left {
+  float: left;
+  margin-left: 24pt;
+  color: #ffffff;
+  text-align: center;
+  padding: 12px 18px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+  margin-right: 24pt;
+}
+
+/* End Top Nav */
+
+.alert{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: visible;
+  z-index: 1;
+}
+
+/* Start Nav */
+.navbar-nav {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: visible;
+  z-index: 10000;
+}
+
+.navbar .navbar-toggler {
+  position: relative;
+  overflow: visible;
+  z-index: 10000;
+  text-align: center;
+  justify-content: center;
+}
+
+.navbar-nav li {
+  padding-left: 5px;
+  padding-right: 5px;
+  position: relative;
+  z-index: 10000;
+  text-align: center;
+  justify-content: center;
+}
+
+/* End Nav */
+
+/* Start Product Section */
+:root {
+  --white-light: rgba(255, 255, 255, 0.7);
+  --alice-blue: rgba(22, 177, 103, 0.5);
+  --carribean-green: rgba(94, 215, 163, 0.982);
+  --grey: rgba(244, 235, 235, 0.625);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.container {
+  width: 88vw;
+  margin: 0 auto;
+}
+
+.section-products {
+  padding: 3.2rem 0;
+}
+
+.section-products .text-light {
+  text-align: center;
+  width: 70%;
+  margin: 0.9rem auto;
+}
+
+.product {
+  margin: 2rem;
+  position: relative;
+}
+
+.product-content {
+  background: var(white);
+  /*cursor: pointer;*/
+}
+
+.product-img {
+  background: var(--white-light);
+  box-shadow: 0 0 x 10px var(--white-light);
+  width: 270px;
+  height: 270px;
+  margin: 0 auto;
+  border-radius: 50%;
+  transition: background 0.5s ease;
+}
+
+.product-btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.4rem;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.btn-cart {
+  background: rgb(189, 188, 188);
+  border: 1px solid black;
+  padding: 0.8rem 0;
+  margin-top: 0.8rem;
+  width: 125px;
+  font-family: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all 0.6s ease;
+}
+
+.btn-cart:hover {
+  background: var(--carribean-green);
+}
+
+.product-info {
+  background: white;
+  padding: 1rem;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.product-title {
+  color: black;
+  text-decoration: none;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.product-price {
+  color: black;
+  font-size: 1.5rem;
+  display: inline-block;
+  padding-left: 0;
+}
+
+.product-img img {
+  transition: transform 0.6s ease;
+}
+
+.product-content:hover .product-img img {
+  transform: scale(1.1);
+}
+
+.product-content:hover .product-img {
+  background: var(--carribean-green);
+}
+
+.product-content:hover .product-btns {
+  opacity: 1;
+}
+
+/* End Product Section */
+
+/* This is the details section */
+
+.card {
+  border: none
+}
+
+.product {
+  background-color: #eee
+}
+
+.brand {
+  font-size: 13px
+}
+
+.price {
+  color: rgb(0, 0, 0);
+  font-size: 14px
+}
+
+.about {
+  font-size: 14px
+}
+
+.color {
+  margin-bottom: 10px
+}
+
+label.radio {
+  cursor: pointer
+}
+
+label.radio input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  pointer-events: none
+}
+
+label.radio span {
+  padding: 2px 9px;
+  border: 2px solid #ff0000;
+  display: inline-block;
+  color: #ff0000;
+  border-radius: 3px;
+  text-transform: uppercase
+}
+
+label.radio input:checked+span {
+  border-color: #ff0000;
+  background-color: #ff0000;
+  color: #fff
+}
+
+.btn-danger {
+  background-color: #ff0000 !important;
+  border-color: #ff0000 !important
+}
+
+.btn-danger:hover {
+  background-color: #da0606 !important;
+  border-color: #da0606 !important
+}
+
+.btn-danger:focus {
+  box-shadow: none
+}
+
+.cart i {
+  margin-right: 10px
+}
+
+.form-outline .form-label{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top:4px;
+  }
+

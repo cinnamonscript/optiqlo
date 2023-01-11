@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block main %}
+
+<div class="row co-12 d-flex mt-2 mb-2 justify-content-center">
+  <h3>Shopping Cart</h3>
+</div>
+
+<section class="h-100 gradient-custom">
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center my-4">
+      <div class="col-md-8">
+        <div class="card mb-4">
+          <div class="card-header py-3">
+            <h5 class="mb-0">Cart - {{ itemnumber }} items</h5>
+          </div>
+          <div class="card-body">
+            {% for glasses in order.glasses %}
+            <!-- Single item -->
+            <div class="row">
+              <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                <!-- Image -->
+                <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                  <img src="{{url_for('static', filename=('img/' + glasses.image))}}" class="w-100" alt="Frame Image" />
+                </div>
+                <!-- Image -->
+              </div>
+
+              <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                <!-- Data -->
+                <p><a
+                    href="{{ url_for('main.product', productname=glasses.name) }}"><strong>{{glasses.name}}</strong></a>
+                </p>
+                <p>Description: {{glasses.description}}</p>
+                <p>Size: {{glasses.eyesize}}-{{glasses.bridgesize}}</p>
+                <form method="POST" action="{{url_for('main.deleteorderitem')}}">
+                  <input type="hidden" id="id" name="id" value="{{glasses.id}}">
+                  <input type="submit" value="Delete" class="btn btn-primary btn-sm me-1 mb-2">
+                  <i class="glyphicon glyphicon-trash"></i>
+                </form>
+                <!-- Data -->
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                <!-- Quantity -->
+
+                <div class="d-flex mb-4" style="max-width: 300px">
+                </div>
+                <!-- Quantity -->
+
+                <!-- Price -->
+                <p class="text-start text-md-center">
+                  <strong>{{ "$%.2f"|format(glasses.price) }}</strong>
+                </p>
+                <!-- Price -->
+              </div>
+            </div>
+            <!-- Single item -->
+
+            <hr class="my-4" />
+            {% endfor %}
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="card-body">
+            <p class="mb-0"><strong>Order Date</strong></p>
+            <p class="mt-0">{{order.date.strftime("%d-%m-%Y")}}</p>
+            <br>
+            <p class="mb-0"><strong>Expected Shipping Date</strong></p>
+            <p class="mt-0">{{shippingdate.strftime("%d-%m-%Y")}}</p>
+            <br>
+            <a href="{{ url_for('main.deleteorder') }}" class="btn btn-primary">Empty Basket</a>
+          </div>
+        </div>
+
+        <div class="card mb-4 mb-lg-0">
+          <div class="card-body">
+            <p><strong>We accept</strong></p>
+            <div class="d-flex mb-4 float-left">
+              <img class="mr-4" style="width: 60px"
+                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                alt="Visa">
+              <img class="mr-4" style="width: 60px"
+                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                alt="Mastercard">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header py-3">
+            <h5 class="mb-0">Summary</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                Items
+                <span>{{ "$%.2f"|format(totalprice) }}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                Shipping
+                <span> $10.00 </span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                <div>
+                  <strong>Total</strong>
+                </div>
+                <span><strong>{{ "$%.2f"|format(totalprice+10) }}</strong></span>
+              </li>
+            </ul>
+
+            <a href="{{url_for('main.checkout')}}"><button type="button" class="btn btn-primary btn-lg btn-block">
+              Go to Checkout
+            </button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Optiqlo</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- putting header inside container will prevent full width navbar -->
+    <header>
+        <!-- Shopping Cart -->
+        <div class="topnav">
+            <div class="topnav-right">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                    <a class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="color:white" href="{{url_for('main.order')}}"><span class="text" href="{{url_for('main.order')}}">Cart</span></a>
+                </button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                    <a class="glyphicon glyphicon-user" aria-hidden="true" style="color:white" href="{{url_for('main.checkout')}}"><span class="text" href="{{url_for('main.checkout')}}">Details</span></a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Hero Image -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-title">
+                    <h1>Welcome to Optiqlo</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{url_for('main.index')}}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                            id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Collections
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{url_for('main.shapes')}}">Shop by
+                                Shape</a> 
+                            <a class="dropdown-item" href="{{url_for('main.materials')}}">Shop by
+                                Materials</a> 
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{url_for('main.lateststyles')}}">Latest Styles</a> 
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Shop
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{url_for('main.male')}}">Male</a>
+                            <a class="dropdown-item" href="{{url_for('main.female')}}">Female</a>
+                            <a class="dropdown-item"
+                                href="{{url_for('main.unisex')}}">Unisex</a> 
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('main.enquiry')}}">Contact Us <span class="sr-only"></span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+        {% block head %}{% endblock %}
+    </header>
+
+    <!-- Main page content goes in container -->
+    <div class="container-fluid">
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center p-4 border-bottom">
+
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i></i>
+                </a>
+
+                </a>
+            </div>
+
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Let's Keep in Touch</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i></i>
+                </a>
+
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Optiqlo
+                        </h6>
+                        <p>
+                            We are Optiqlo and we sell quality spectacle frames of classic, modern, and timeless
+                            designs.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="{{url_for('main.male')}}" class="text-reset">Male</a>
+                        </p>
+                        <p>
+                            <a href="{{url_for('main.female')}}" class="text-reset">Female</a>
+                        </p>
+                        <p>
+                            <a href="{{url_for('main.lateststyles')}}" class="text-reset">Latest Styles</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="{{url_for('main.pricing')}}" class="text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="{{url_for('main.settings')}}" class="text-reset">Settings</a>
+                        </p>
+                        <p>
+                            <a href="{{url_for('main.order')}}" class="text-reset">Orders</a>
+                        </p>
+                        <p>
+                            <a href="{{url_for('main.help')}}" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Contact
+                        </h6>
+                        <p>
+                            info@optiqlo.com.au
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2022 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Optiqlo.com.au</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

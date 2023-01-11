@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<!-- display glasses for the specific shape -->
+<section>
+
+    <div class="text-dark text-center">
+        <div>
+            <p class="hero-content">Browse a SHAPE</p>
+        </div>
+    </div>
+
+    {% for shape in shapes%} 
+    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+        <div id="{{shape.id}}" class="product-content">
+          <div class="product-img">
+            <a href="{{ url_for('main.shapesglasses', shapeid=shape.id) }}">
+              <img src="{{url_for('static', filename='img/'+shape.image)}}" alt="Card image">
+            </a>
+          </div>
+          <div id="{{shape.id}}" class="product-info text-center">
+            <p class="product-title">{{shape.name}}</p>
+            <p class="product-price">{{shape.description}}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+</section>
+{% endblock %}
