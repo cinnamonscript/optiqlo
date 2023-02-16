@@ -13,7 +13,7 @@ def create_app():
     app.secret_key='Hehehe123'
 
     # Set the app configuration data
-    app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///optiqlo'
+    app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///optiqlo.sqlite'
 
     # Initialise db with flask app
     db.init_app(app)
@@ -25,8 +25,8 @@ def create_app():
     app.register_blueprint(views.bp)
     
     # This is used to import my Database.
-    from . import admin
-    app.register_blueprint(admin.bp)
+    #from . import admin
+    #app.register_blueprint(admin.bp)
    
     return app
 

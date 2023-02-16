@@ -88,7 +88,7 @@ def dbseed():
         db.session.add(frame17)
         db.session.commit()
     except:
-        return 'There was an issue adding the cities in dbseed function'
+        return 'There was an issue adding the frames in dbseed function'
 
     return 'Data loaded'
 
