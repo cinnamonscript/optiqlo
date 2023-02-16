@@ -16,11 +16,11 @@ To run Optiqlo on your local machine, you will need to have Python installed. Yo
 
 Once you have Python installed, you can install the required packages by running the following commands:
 
-``pip3 install flask``
-``pip3 install flask_wtf``
-``pip3 install email_validator``
-``pip3 install flask_bootstrap``
-``pip3 install flask_sqlalchemy``
+``pip3 install flask`` <br>
+``pip3 install flask_wtf`` <br>
+``pip3 install email_validator`` <br>
+``pip3 install flask_bootstrap`` <br>
+``pip3 install flask_sqlalchemy`` <br>
 
 After installing the required packages, you can run Optiqlo by navigating to the root directory of the project and running the following command:
 
