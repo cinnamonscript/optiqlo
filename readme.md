@@ -1,6 +1,6 @@
 
 # OPTIQLO
-## Optiqlo is an e-commerce web application designed to optimise the customer experience for buying spectacle frames.
+### An e-commerce web application designed to optimise the customer experience for buying spectacle frames.
 
 Optiqlo is a web application designed to enhance the customer experience of buying spectacle frames online. With Optiqlo, users can easily browse and search for products, add items to their cart, and complete their purchase by entering their personal and payment information.
 
